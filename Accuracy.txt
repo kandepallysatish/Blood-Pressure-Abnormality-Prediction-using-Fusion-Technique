@@ -1,0 +1,7 @@
+Blood Pressure Abnormality Prediction using Boosted Random Forest
+
+Algorithm:  AdaBoosted Random Forest Classifier
+
+Accuracy % score: 90.16 
+
+

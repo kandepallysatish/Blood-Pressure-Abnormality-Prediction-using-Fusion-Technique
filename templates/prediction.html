@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> 
+<html> <!--<![endif]-->
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="description" content="Bingo One page parallax responsive HTML Template ">
+  
+  <meta name="author" content="Themefisher.com">
+
+  <title>Prediction</title>
+
+<!-- Mobile Specific Meta
+  ================================================== -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- Favicon -->
+  <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
+  
+  <!-- CSS
+  ================================================== -->
+  <!-- Themefisher Icon font -->
+  <link rel="stylesheet" href="../static/plugins/themefisher-font/style.css">
+  <!-- bootstrap.min css -->
+  <link rel="stylesheet" href="../static/plugins/bootstrap/css/bootstrap.min.css">
+  <!-- Lightbox.min css -->
+  <link rel="stylesheet" href="../static/plugins/lightbox2/dist/css/lightbox.min.css">
+  <!-- animation css -->
+  <link rel="stylesheet" href="../static/plugins/animate/animate.css">
+  <!-- Slick Carousel -->
+  <link rel="stylesheet" href="../static/plugins/slick/slick.css">
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="../static/css/style.css">  
+ <style>
+            
+                  
+            
+            h1 {
+                color:#000000;
+            }
+			b{
+			color: #2196F3;
+			}
+
+        
+        body {
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-bottom: 5px;
+        }
+        input, select {
+            margin-bottom: 10px;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+        }
+        .footer {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+        }
+        .footer a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .paragraph {
+            flex-basis: 45%; 
+        }			
+			
+			
+        </style>
+
+
+</head>
+
+<body id="body">
+
+ <!--
+  Start Preloader
+  ==================================== -->
+  <div id="preloader">
+    <div class='preloader'>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div> 
+  <!--
+  End Preloader
+  ==================================== -->
+
+
+  
+
+<!--
+Fixed Navigation
+==================================== -->
+<header class="navigation fixed-top">
+  <div class="nav-container">
+    <!-- main nav -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <!-- logo -->
+       
+      <!-- /logo -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
+        aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navigation">
+        <ul class="navbar-nav ml-auto text-center">
+          
+         <li class="nav-item ">
+            <a class="nav-link" href="{{url_for('first')}}">Home</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="{{url_for('login')}}">Login</a>
+          </li>
+		   <li class="nav-item ">
+            <a class="nav-link" href="{{url_for('prediction')}}">Prediction</a>
+          </li>
+             <li class="nav-item ">
+            <a class="nav-link" href="{{url_for('performance')}}">performance_analysis</a>
+          </li>
+           
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- /main nav -->
+  </div>
+</header>
+<!--
+End Fixed Navigation
+==================================== -->
+
+<section class="single-page-header" style="background-image: url(../static/images/slider/slider-bg-2.jpg);">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h2> Blood Pressure Abnormality Prediction</h2>
+				<ol class="breadcrumb header-bradcrumb">
+				  <li><a href="index.html"></a></li>
+				  <li class="active"></li>
+				</ol>
+			</div>
+		</div>
+	</div>
+</section>
+	 
+ <!--Start Contact Us
+	=========================================== -->		
+<section class="contact-us" id="contact">
+	<div class="container">
+		<div class="row">
+		 <div class="col-12">
+		  <center><h1> Prediction</h1></center>
+			<!-- section title -->
+			
+			<form action="{{ url_for('predict')}}" method="post">
+            
+                <label for="hemoglobin">Level of Hemoglobin:</label>
+                <input type="number" name="hemoglobin" id="hemoglobin" step="0.01" placeholder="Level of Hemoglobin(0 - 20)" required>
+    
+                <label for="pedigree">Genetic Pedigree Coefficient:</label>
+                <input type="number" name="pedigree" id="pedigree" step="0.01" placeholder="Genetic Pedigree Coefficient(0.0 - 1.0)" required>
+    
+                <label for="age">Age:</label>
+                <input type="number" name="age" id="age" placeholder="Age" required>
+    
+                <label for="bmi">BMI:</label>
+                <input type="number" name="bmi" id="bmi" step="0.01" placeholder="BMI(0 - 50)" required>
+    
+                <label for="sex">Sex:</label>
+                <select name="sex" id="sex" required>
+                    <option value="0">Male</option>
+                    <option value="1">Female</option>
+                </select>
+    
+                <label for="pregnancy">Pregnancy:</label>
+                <select name="pregnancy" id="pregnancy" required>
+                    <option value="0">No</option>
+                    <option value="1">Pregnant</option>
+                </select>
+    
+                <label for="smoking">Smoking:</label>
+                <select name="smoking" id="smoking" required>
+                    <option value="0">Non-Smoker</option>
+                    <option value="1">Smoker</option>
+                </select>
+    
+                <label for="alcohol">Alcohol Consumption per Day:</label>
+                <input type="number" name="alcohol" id="alcohol" step="0.01" placeholder="Alcohol Consumption per Day(0 - 500)" required>
+    
+                <label for="stress">Level of Stress:</label>
+                <select name="stress" id="stress" required>
+                    <option value="3">High</option>
+                    <option value="2">Medium</option>
+                    <option value="1">Low</option>
+                </select>
+    
+                <label for="Chronic_kidney_disease">Chronic kidney disease:</label>
+                <select name="Chronic_kidney_disease" id="Chronic_kidney_disease" required>
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select>
+    
+                <label for="Adrenal_and_thyroid_disorders">Adrenal and thyroid disorders:</label>
+                <select name="Adrenal_and_thyroid_disorders" id="Adrenal_and_thyroid_disorders" required>
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select>
+    
+                <!-- Repeat the above code for input3 to input11 -->
+    
+                <input type="submit" value="Predict">
+            </form>
+        </br>
+	</br>
+    	 	 <h1> Prediction is : {{ prediction_text }} </h1>
+  
+			</div>
+			<!-- /section title -->
+			
+		 
+			<!-- ./End Contact Form -->
+		
+		</div> <!-- end row -->
+	</div> <!-- end container -->
+</section> <!-- end section -->
+
+<!--================================
+=            Google Map            =
+=================================-->
+
+
+
+
+<footer id="footer" class="bg-one" style="background-color:black;"> 
+    <div class="footer">
+        <p class="paragraph">Created by <a href="https://seadesk.in" target="_blank">SeaDesk</a></p>
+        <p class="paragraph">2nd Page <a href="https://seadesk.org" target="_blank">Organization</a></p>
+    </div>
+</footer> <!-- end footer -->
+
+
+    <!-- end Footer Area
+    ========================================== -->
+
+
+    
+    <!-- 
+    Essential Scripts
+    =====================================-->
+    <!-- Main jQuery -->
+    <script src="../static/plugins/jquery/jquery.min.js"></script>
+    <!-- Google Map -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu5nZKbeK-WHQ70oqOWo-_4VmwOwKP9YQ"></script>
+    <script  src="../static/plugins/google-map/gmap.js"></script>
+
+    <!-- Form Validation -->
+    <script src="../static/plugins/form-validation/jquery.form.js"></script> 
+    <script src="../static/plugins/form-validation/jquery.validate.min.js"></script>
+    
+    <!-- Bootstrap4 -->
+    <script src="../static/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <!-- Parallax -->
+    <script src="../static/plugins/parallax/jquery.parallax-1.1.3.js"></script>
+    <!-- lightbox -->
+    <script src="../static/plugins/lightbox2/dist/js/lightbox.min.js"></script>
+    <!-- Owl Carousel -->
+    <script src="../static/plugins/slick/slick.min.js"></script>
+    <!-- filter -->
+    <script src="../static/plugins/filterizr/jquery.filterizr.min.js"></script>
+    <!-- Smooth Scroll js -->
+    <script src="../static/plugins/smooth-scroll/smooth-scroll.min.js"></script>
+    
+    <!-- Custom js -->
+    <script src="../static/js/script.js"></script>
+
+  </body>
+  </html>
